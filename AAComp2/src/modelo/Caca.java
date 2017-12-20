@@ -12,11 +12,11 @@ public class Caca extends Maquina {
 		boolean flag = false;
 		for (int i = x-1; i < x+2; i++) {
 			for (int j = y-1; j < y+2; j++) {
-				if (flag == true || tabuleiro.valorQuadrado(i, j) == 1 || tabuleiro.valorQuadrado(i, j) == 2 || tabuleiro.valorQuadrado(i, j) == 3 || tabuleiro.valorQuadrado(i, j) == 4) {
+				if (flag == true & (tabuleiro.valorQuadrado(i, j) == 1 || tabuleiro.valorQuadrado(i, j) == 2 || tabuleiro.valorQuadrado(i, j) == 3 || tabuleiro.valorQuadrado(i, j) == 4)) {
 					System.out.println("Acertou uma máquina inimiga!");
 					tabuleiro.inserirValorQuadrado(i, j, 5);
 				}
-				else {
+				else if (flag == true & (tabuleiro.valorQuadrado(i, j) == 0)) {
 					System.out.println("Acertou na água!");
 					tabuleiro.inserirValorQuadrado(i, j, 6);
 				}

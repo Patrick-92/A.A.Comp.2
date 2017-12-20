@@ -3,6 +3,8 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import computador.Computador;
+
 public class BatalhaNaval {
 	private ArrayList<Tabuleiro> tabuleiros = new ArrayList<Tabuleiro>(2);
 	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>(2);
