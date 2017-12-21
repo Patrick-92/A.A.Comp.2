@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import computador.Computador;
 
-public class BatalhaNaval {
+public class BatalhaNaval extends Object implements Cloneable{
 	private ArrayList<Tabuleiro> tabuleiros = new ArrayList<Tabuleiro>(2);
 	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>(2);
 	
@@ -29,9 +29,9 @@ public class BatalhaNaval {
 		
 		tabuleiros.get(0).desenharTabuleiro();
 		tabuleiros.get(1).desenharTabuleiro();
-		
+		Computador computador = new Computador();
 		while (idJogadorVencedor != 1 || idJogadorVencedor != 2) {
-			Computador computador = new Computador();
+			
 			int[] parametros = new int[3];
 			
 			System.out.println("Digite o id da máquina que você vai utilizar:");
@@ -95,4 +95,14 @@ public class BatalhaNaval {
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		this.jogadores = jogadores;
 	}
+	
+	public BatalhaNaval retornaClone () {
+	      try {
+	        return (BatalhaNaval)this.clone();
+	      }
+	      catch (CloneNotSupportedException ex) {
+	        ex.printStackTrace();
+	        return null;
+	      }
+	    }
 }
